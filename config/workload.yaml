@@ -22,12 +22,13 @@ spec:
         type: openapi
         location: 
           path: "/api-docs"
+          baseURL: http://xiada-customer-profile.default.svc.cluster.local
         owner: customer-relations-department
         system: profile-management
         description: Manage customer profiles
   source:
     git:
-      url: https://github.com/saragluna/xi
+      url: https://github.com/saragluna/xiada-rest-service
       ref:
         branch: main
   serviceClaims:

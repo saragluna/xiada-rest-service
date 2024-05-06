@@ -48,6 +48,23 @@ public class CustomerProfileController {
         this.service = service;
     }
 
+
+    @Operation(summary = "Hello world", method = "GET", tags = "Experimental")
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Return from the other side of the world."
+            ),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "No hello from the other side of the world."
+            )
+    })
+    @GetMapping("/hello")
+    public ResponseEntity<String> hello() {
+        return ResponseEntity.ok("Hello, World!");
+    }
+
     @Operation(summary = "Saves provided customer profile.", method = "POST", tags = "Customer Profile CRUD")
     @ApiResponses({
             @ApiResponse(
