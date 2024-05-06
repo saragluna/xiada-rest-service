@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: xiada-customer-profile
+  annotations:
+    "backstage.io/kubernetes-label-selector": "app.kubernetes.io/part-of=xiada-customer-profile"
+spec:
+  type: service
+  lifecycle: experimental
+  owner: default-team
+  providesApis:
+    - xiada-customer-profile

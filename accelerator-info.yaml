@@ -1,0 +1,57 @@
+id: c1f7ee26-0f2f-4250-b88f-c9c5f089f496
+timestamp: 2024-05-06T13:09:56Z
+username: guest
+source: TAP-GUI
+accelerator:
+  name: java-rest-service
+  source:
+    image: serviceacr.azurecr.io/tanzu-application-platform/tap-packages@sha256:73064ff98d6df24e7513316c2dc90d11aa13f6fd8fdebee8822b79b317dd6f79
+fragments:
+  - name: spring-boot-h2
+    source:
+      image: serviceacr.azurecr.io/tanzu-application-platform/tap-packages@sha256:48928e44fb611188263ccc2caf113ad5252fa2590a33df44040dfa82179f98fd
+  - name: spring-boot-mysql
+    source:
+      image: serviceacr.azurecr.io/tanzu-application-platform/tap-packages@sha256:b2a55c05ace0355f361dc34d7ee7216540d23d6bb88246d07a55bae0cb79accf
+  - name: spring-boot-postgresql
+    source:
+      image: serviceacr.azurecr.io/tanzu-application-platform/tap-packages@sha256:6893cbb1d7bc2be3c7746e6409e3fe0cb89cad8cc1eb4478aeb5664f31561ae0
+  - name: build-wrapper-maven
+    source:
+      image: serviceacr.azurecr.io/tanzu-application-platform/tap-packages@sha256:195a3ca6585fa91c41292584a19c2807c72ecdf986ce860a7147451e89d467d4
+  - name: spring-boot-database
+    source:
+      image: serviceacr.azurecr.io/tanzu-application-platform/tap-packages@sha256:2c6283602cb7a76b2e1112756e9482184e51b3c020b604376229a3b8463916a2
+  - name: live-update
+    source:
+      image: serviceacr.azurecr.io/tanzu-application-platform/tap-packages@sha256:19309486cfea374c354431751a3ece2392f9b8e7f12b3fea71db1684b6553cf8
+  - name: tap-workload
+    source:
+      image: serviceacr.azurecr.io/tanzu-application-platform/tap-packages@sha256:d9c7d8d322f0740666ba7c752a9174d1eb66274338c4f0e211edb1d448104c2a
+  - name: testcontainers-mysql
+    source:
+      image: serviceacr.azurecr.io/tanzu-application-platform/tap-packages@sha256:542ce560d8dc1e4d206b2fe0eeb9c7fbf9d9ff71ea1b539f93c8a443eb8012cc
+  - name: testcontainers-postgresql
+    source:
+      image: serviceacr.azurecr.io/tanzu-application-platform/tap-packages@sha256:cbe92d01ec663352f04c03ee9d3beee23a66b3a1464c03e5ade23a878ba2228d
+  - name: build-wrapper-gradle
+    source:
+      image: serviceacr.azurecr.io/tanzu-application-platform/tap-packages@sha256:5480259d6a29a11f0cc482cd304501d74ccd89dd7207f2d639d6f0d8eedc3bf8
+options:
+  apiDescription: Manage customer profiles
+  apiOwner: customer-relations-department
+  apiSystem: profile-management
+  artifactId: xiada-customer-profile
+  bsGitBranch: main
+  bsGitRepository: github.com?owner=saragluna&repo=xi
+  buildTool: maven
+  databaseIntegrationTestType: testcontainers
+  databaseMigrationTool: flyway
+  databaseName: customer-database
+  databaseType: postgres
+  exposeOpenAPIEndpoint: true
+  groupId: com.example
+  includeBuildToolWrapper: true
+  liveUpdateIDESupport: true
+  packageName: com.example.customerprofile
+  projectName: xiada-rest-service
